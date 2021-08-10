@@ -1,4 +1,4 @@
-
+/*qestion1*/
 class restaurentManager{
     restaurentList=[
        {
@@ -18,6 +18,7 @@ class restaurentManager{
        }
    ]
    RestaurentNames=[];
+   /*1A*/
  PrinAllRestaurentNames(){
   
       this.restaurentList.map((item,index)=>{
@@ -31,6 +32,7 @@ class restaurentManager{
        document.getElementById('printname').innerHTML=`${this.RestaurentNames}`
        this.RestaurentNames=[];
    }
+   /*1B*/
   filterRestaurentBycity(city){
     return this.restaurentList.filter((item)=>{
            return item.city==city;
@@ -54,6 +56,7 @@ function Filter(){
           document.getElementById('filtername').innerHTML=`name:${item.name} \n address:${item.address} \n city:${item.city}` ;
       })
 }
+/*2nd quesion */
 orderData = {
     'Below 500': 20,
     '500-1000': 29,
@@ -67,14 +70,17 @@ keys=Object.keys(orderData);
 var Torders=values.reduce((item,nextlement)=>{
     return item+nextlement;
 })
+/*2A*/
 function TotalOrders(){
     document.getElementById('Torders').innerHTML=`${Torders}`;
 }
+/*2B*/
 function OrderPropotions(){
  
     document.getElementById("Opropotions").innerHTML=`${keys.length}`;
     
 }
+/*2C*/
 function Perecentage(){
     var array=this.keys.map((item,index)=>{
          return {id:index,order:item,'order percentage':(this.orderData[`${item}`]/Torders)*100,restaurent:'pujabi Tadka'};
